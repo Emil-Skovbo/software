@@ -12,22 +12,6 @@ import java.io.IOException;
  */
 class SelectInsertionSort {
 
-
-//   public static void selectionSort(String[] arr){  
-//        for (int i = 0; i <= arr.length; i++)  
-//        {  
-//            int index = i;  
-//            for (int j = i + 1; j < arr.length; j++){  
-//                if (arr[j] < arr[index]){  
-//                    index = j;//searching for lowest index  
-//                }  
-//            }  
-//            int smallerNumber = arr[index];   
-//            arr[index] = arr[i];  
-//            arr[i] = smallerNumber;  
-//        }  
-//    }
-
     static void selectionSort(String arr[],int n)
     {
         // One by one move boundary of unsorted subarray
@@ -86,13 +70,16 @@ class SelectInsertionSort {
         String[] str = FileUtility.toStringArray("D:\\java projects\\soft2021spring-mal\\data\\" +
                 "king-james-bible.txt", "[^A-Za-z']+");
         //"shakespeare-complete-works.txt", "[^A-Za-z']+");
-        //selectionSort(str, str.length);
-        insertionSort(str,str.length);
-
-        String[] array = { "abc", "xyz",
-                "abcd", "bcd", "abc" };
+        long startTime = System.nanoTime();
+        selectionSort(str, str.length);
+        //insertionSort(str,str.length);
         for (int i = 0; i < str.length; ++i)
             System.out.print(str[i] + " ");
+
+        long endTime = System.nanoTime();
+        long runTime = (endTime - startTime)/ 1000000;
+
+        System.out.println("\nrun time was : "+ runTime + " milliseconds");
 
     }
 

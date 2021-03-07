@@ -23,6 +23,7 @@ public class Stopwatch implements AutoCloseable {
       Thread.sleep(1000);
       System.out.printf("%5.6f\n", sw.step());
       Thread.sleep(500);
+
       }
     }
   }

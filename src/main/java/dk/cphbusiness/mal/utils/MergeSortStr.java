@@ -79,30 +79,20 @@ public class MergeSortStr {
 
 
     public static void main(String args[]) throws IOException {
-        String arr[] = { "abe", "bobber", "citron", "helle", "Adam", "Kurt" };
-
         String[] str = FileUtility.toStringArray("D:\\java projects\\soft2021spring-mal\\data\\" +
                 "king-james-bible.txt", "[^A-Za-z']+");
                 //"shakespeare-complete-works.txt", "[^A-Za-z']+");
-        System.out.println("Given Array");
-        for (int i = 0; i < arr.length; ++i)
-            System.out.print(arr[i] + " ");
-
         MergeSortStr ob = new MergeSortStr();
-        ob.sort(str, 0, str.length - 1);
 
-        System.out.println("\nSorted array");
-        for (int i = 0; i < str.length; ++i)
-            System.out.print(str[i] + " ");
-/*
-        String[] str = FileUtility.toStringArray("D:\\java projects\\soft2021spring-mal\\data\\shakespeare-complete-works.txt", "[^A-Za-z']+");
-        MergeSortStr ob = new MergeSortStr();
+        long startTime = System.nanoTime();
+
         ob.sort(str, 0, str.length - 1);
-        //insertionSort(str);
-        System.out.println("Starting: \n");
         for (int i = 0; i < str.length; ++i)
             System.out.print(str[i] + " ");
 
- */
+        long endTime = System.nanoTime();
+        long runTime = (endTime - startTime)/ 1000000;
+
+        System.out.println("\nrun time was : "+ runTime + " milliseconds"); // 2787 was my result
     }
 }

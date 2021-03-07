@@ -4,7 +4,7 @@ import java.io.IOException;
 
 // Java implementation to print
 // the string in Lexicographical order
-class GFG
+class HeapSortStr
 {
 
     // Used for index in heap
@@ -150,17 +150,14 @@ class GFG
 
     // Driver Code
     public static void main(String[] args) throws IOException {
-        String arr[] = {"banana", "orange", "apple",
-                "pineapple", "berries", "lichi" };
-
-        int n = arr.length;
-
-        sort(arr, n);
-
         String[] str = FileUtility.toStringArray("D:\\java projects\\soft2021spring-mal\\data\\" +
                 "king-james-bible.txt", "[^A-Za-z']+");
         //"shakespeare-complete-works.txt", "[^A-Za-z']+");
+        long startTime = System.nanoTime();
         sort(str, str.length);
+        long endTime = System.nanoTime();
+        long runTime = (endTime - startTime)/ 1000000;
+        System.out.println("\nrun time was : "+ runTime + " milliseconds"); // 2715 was my result but the algorithm does not work properly
         /*System.out.println("\nSorted array");
         for (int i = 0; i < 1000; ++i)
             System.out.print(str[i] + " ");
