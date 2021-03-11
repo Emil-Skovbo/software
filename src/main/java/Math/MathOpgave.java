@@ -1,6 +1,7 @@
 package Math;
+import java.lang.Math;
 
-public class Math {
+public class MathOpgave {
 
 
     public static long matOpgave(int n){
@@ -19,5 +20,13 @@ public class Math {
         System.out.println(matOpgave(100));
         System.out.println(matOpgave(1000));
         System.out.println(matOpgave(1000000));
+        long n = 1550;
+        for (int i = 0; i <=8 ; i++) {
+            System.out.println(n);
+            n = n*1550;
+
+        }
+        System.out.println(n);
+
     }
 }
