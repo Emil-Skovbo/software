@@ -3,10 +3,13 @@ package Math;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class newtoi {
+public class TextGUITowerOfHanoi {
+
+
     public static int N;
     /* Creating Stack array */
     public static Stack<Integer>[] tower = new Stack[4];
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         tower[1] = new Stack<Integer>();
@@ -19,6 +22,7 @@ public class newtoi {
         N = num;
         toh(num);
     }
+
     /* Function to push disks into stack */
     public static void toh(int n) {
         for (int d = n; d > 0; d--)
@@ -26,6 +30,7 @@ public class newtoi {
         display();
         move(n, 1, 2, 3);
     }
+
     /* Recursive Function to move disks */
     public static void move(int n, int a, int b, int c) {
         if (n > 0) {
@@ -36,6 +41,7 @@ public class newtoi {
             move(n - 1, b, a, c);
         }
     }
+
     /* Function to display */
     public static void display() {
         for (int i = N - 1; i >= 0; i--) {
